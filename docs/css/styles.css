@@ -1,0 +1,67 @@
+/* This stylesheet is where to add styles for your Shakespeare Home Page */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family:'Courier New', Courier, monospace;
+  /*your style rules go in here */
+  background-color: rgb(128, 153, 186);
+}
+
+h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgb(31, 31, 36);
+  text-align: center;
+  font-size: 70px;
+  
+}
+
+header {
+  border-color: darkslategray;
+  padding:0.25em;
+  border-radius:0.25em;
+
+}
+
+main {
+/* border:1px solid red; */
+width: 70%;
+max-width: 600px;
+margin: 12px auto;
+padding: 30px;
+background-color: rgb(146, 156, 161);
+}
+
+section {
+  border: 0;
+}
+
+ul {
+  margin: 25px 40px;
+}
+
+figure {
+ width:50%;
+ border:2px solid ;
+ margin: 0 auto;
+}
+
+
+p {
+  margin-bottom: 20px;
+}
+img {
+  width:100%;
+  display:block;
+}
+
+footer {
+text-align:center;
+position: fixed;
+line-height: 4;
+}

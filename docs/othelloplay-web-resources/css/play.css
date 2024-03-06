@@ -1,0 +1,316 @@
+/* This stylesheet will be selected when you export HTML from InDesign */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /*your style rules go in here */
+  background-color:rgb(128, 153, 186);
+  margin-top: 60px;
+}
+
+.backtotop {
+  position: fixed;
+  bottom: 2px;
+  right: 8px;
+  opacity: 0.9;
+}
+.backtotop a {
+  text-decoration: none;
+  font-size: 3em;
+  color: rgb(255, 255, 255)
+}
+
+
+
+
+main {
+  background-color:gray;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: silver;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  clear: right;
+}
+li.home {
+  margin-right: auto;
+}
+
+nav ul li {
+  flex: 0 0 8rem; /*the same as flex-grow, flex-shrink, flex-basis */
+  text-align: center;
+}
+
+
+/* we turn off the underline and set the padding and the color O */
+
+nav ul li a {
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  display: block;
+  color:black;
+}
+
+/* feedback for the user with a background when hovering hover */
+
+nav ul li:hover {
+  background-color:darkslategrey;
+  opacity:0.9;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
+/* sub menus */
+
+li ul {
+  display: none;
+  position: absolute;
+  background-color:grey;
+}
+
+li ul li a {
+  padding: 0.3rem 1.5rem;
+  /*   font-size: 0.8rem; */
+}
+
+nav ul li:hover ul {
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul li ul li {
+  flex: 0 1 auto;
+  width: 8rem; /* the same as the value for flex-basis on the parent li */
+}
+
+/* now for the smaller displays */
+
+@media screen and (max-width: 900px) {
+
+  html {
+font-size: 12px;
+  }
+
+  .act {
+    font-size: 3em;
+  }
+
+  main {
+    background-color: rgb(146, 156, 161);
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  header{
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+  .hamburger{
+    display: none;
+    font-size: 2.5em;
+    line-height: 1;
+    color: black;
+  }
+  #toggle:checked ~ #menu {
+    display: block !important;
+  }
+  
+
+  li ul {
+    position: static;
+  }
+
+  nav ul li {
+    flex: 0 0 auto; /*the same as flex-grow, flex-shrink, flex-basis */
+    width: 100%;
+  }
+  
+  nav ul li:hover ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* Now let’s try with the hamburger menu
+In this version we need to use a hamburger menu item that will reveal the menu. For this we need a checkbox as input that will toggle this on and off.
+We need to add this the following HTML inside the nav */
+
+/* <input type="checkbox" id="toggle">
+<label for="toggle" class="hamburger">&#9776;</label> */
+
+/* Note that ☰ is an HTML entity that displays the ☰ (hamburger icon.)
+Now in the CSS we need to hide this item when we are in the normal wide screen view: */
+
+/* we hide the hamburger icon until we are on a small screen */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color:black;
+}
+
+/* So when the display is small we can use our media query to hide the menu but reveal the hamburger */
+
+@media screen and (max-width: 900px) {
+  .hamburger {
+    display: block;
+    float: right;
+    cursor: pointer;
+  }
+
+  /*   but we also need to hide the menu until that hamburger is clicked */
+
+  nav ul {
+   display: none;
+  }
+
+  /*when the hamburger is clicked the ul below it will be made to show */
+  /*  the tilda ~ points to the next sibling selector */
+
+  input[type="checkbox"]:checked ~ ul {
+    display: block;
+  }
+}
+
+section {
+border:none;
+border-width: 0;
+}
+
+/*Here follows the class names that you will have in your html*/
+/*You may have more if you added styles in InDesign*/
+/*You need to add the style attributes between the curly brackets*/
+
+/* the following may not be used but it doesn't matter if they are listed here  */
+
+/* If you ahe created any new styles in InDesign and used export tags then you need to add them here */
+
+.dramatis {
+/* display: none; */
+border:1px darkblue;
+}
+
+.play {
+
+}
+figure.sceneImage {
+width:70%;
+border:3px solid darkslategrey;
+}
+
+figure.imagecaption {
+  width:70%;
+  /* border:1px solid green; */
+  font-size: 1em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  figure {
+    margin: 12px auto;
+  }
+  
+
+img {
+width:100%;
+}
+.act {
+  text-align: center;
+
+}
+.character {
+font-family: monospace;
+font-weight: bold;
+}
+.charactername {
+  font-family:monospace;
+  font-weight: bold;
+
+}
+.dramatishead {
+
+}
+
+.location {
+  text-align: center;
+
+}
+.play_location {
+
+}
+
+.firstscene {
+  text-align: center;
+}
+
+.scene {
+  text-align: center;
+
+}
+.song {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(4, 24, 24);
+  font-size: 1.2em;
+  text-align: center;
+
+}
+.stagedirection {
+  color:darkslategray;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.verseline {
+  margin: 0 0 0.4em 8em;
+}
+
+.prose {
+  margin: 0 0 0.4em 8em;
+}
+
+.character_role {
+  font-family:'Courier New', Courier, monospace;
+  
+
+}
+.stage_directions_inline {
+  
+}
+
+audio{
+  width: 100%;
+  margin: 1em 0;
+}
